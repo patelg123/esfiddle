@@ -1,5 +1,6 @@
 /*Default styles are for the white theme*/
 .header {
+	z-index: 9999;
 	display: flex;
 	height: 60px;
 	width: 100vw;

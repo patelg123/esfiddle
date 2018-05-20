@@ -1,7 +1,13 @@
 import * as React from 'react';
 
+import Hero from './Hero/Hero';
+
 export default class Landing extends React.Component {
 	public render() {
-		return "Landing";
+		return (
+			<div>
+				<Hero />
+			</div>
+		);
 	}
 }
