@@ -1,7 +1,7 @@
 .hero {
 	background: var(--dark);
 	position: relative;
-	height: 40vw;
+	height: 42vw;
 	min-height: calc(70vh);
 	display: flex;
 	flex-direction: column;
@@ -12,11 +12,11 @@
 	position: absolute;
 	top: 0;
 	bottom: 0;
-	right: 0;
-	left: 0;
+	left: 50%;
 	margin: auto;
 	height: 100%;
-	animation: hero-fade-out 1.5s ease 1.8s forwards;
+	animation: hero-fade-out 1s ease 2.2s forwards;
+	transform: translateX(-50%);
 	opacity: 1;
 	z-index: 0;
 }
