@@ -16,7 +16,7 @@
 	left: 0;
 	margin: auto;
 	height: 100%;
-	animation: hero-fade-out 1s ease 1.8s forwards;
+	animation: hero-fade-out 1.5s ease 1.8s forwards;
 	opacity: 1;
 	z-index: 0;
 }
