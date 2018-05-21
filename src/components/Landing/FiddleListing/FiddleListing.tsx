@@ -39,7 +39,10 @@ export default class FiddleListing extends React.Component<IFiddleListingProps> 
 		));
 
 		return (
-			<div onWheel={this.onMouseWheel} className='fiddle-listing'>{fiddles}</div>
+			<div onWheel={this.onMouseWheel}
+			className={'fiddle-listing' + (this.props.loading ? ' loading': '')}>
+				{fiddles}
+			</div>
 		)
 	}
 

@@ -64,6 +64,7 @@ export default class Landing extends React.Component<{}, IListingState> {
 					link: "/editor/username/test-fiddle",
 					title: "Test Fiddle",
 				}],
+				loading: false,
 				popularExamples: [{
 					description: "Lorem ipsum dolor sit amet",
 					image: "http://via.placeholder.com/360x180",
@@ -91,7 +92,7 @@ export default class Landing extends React.Component<{}, IListingState> {
 					title: "Test Fiddle",
 				}],
 			})
-		}, 100)
+		}, 3000)
 	}
 	public render() {
 		return (
