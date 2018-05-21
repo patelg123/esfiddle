@@ -1,17 +1,20 @@
 .fiddle-listing {
-	padding: 0 40px;
+	margin: 0 40px;
+	margin-top: 40px;
+	padding-bottom: 16px;
 	display: flex;
+	overflow-x: auto;
 	justify-content: space-between;
 	align-items: stretch;
-	margin-top: 40px;
+	filter: drop-shadow(0px 2px 3px rgba(0,0,0,0.15));
 }
 
 .fiddle-listing__fiddle {
-	flex: 1 1 auto;
+	flex: 0 0 360px;
 	display: flex;
 	flex-direction: column;
 	background: white;
-	box-shadow: 0 2px 12px rgba(0,0,0,.15);
+	/*box-shadow: 0 2px 12px rgba(0,0,0,.15);*/
 	border-radius: 3px;
 	overflow: hidden;
 	min-height: 15vw;
