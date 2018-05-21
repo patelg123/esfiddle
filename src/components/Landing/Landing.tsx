@@ -97,15 +97,15 @@ export default class Landing extends React.Component<{}, IListingState> {
 	public render() {
 		return (
 			<div>
-				<section><Hero /></section>
-				<section className='landing__fiddle-section'>
+				<section className='header-change-dark'><Hero /></section>
+				<section className='header-change-light landing__fiddle-section'>
 					<div className='landing__fiddle-section__header-row'>
 						<h1>Popular Examples</h1>
 						<Link to='/examples'>See All</Link>
 					</div>
 					<FiddleListing loading={this.state.loading} data={this.state.popularExamples} />
 				</section>
-				<section className='landing__fiddle-section'>
+				<section className='header-change-light landing__fiddle-section'>
 					<div className='landing__fiddle-section__header-row'>
 						<h1>Cool Fiddles</h1>
 					</div>

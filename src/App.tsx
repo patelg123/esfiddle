@@ -24,6 +24,24 @@ class App extends React.Component<{}, IAppState> {
 			headerStyle: "dark",
 			user: undefined,
 		};
+		this.onScroll = this.onScroll.bind(this)
+	}
+	public onScroll() {
+		const elems = Array.prototype.slice.call(document.querySelectorAll('.header-change-light, .header-change-dark'));
+		const elem = elems.find((e: HTMLElement) => {
+			const bounding = e.getBoundingClientRect();
+			return (bounding.top + bounding.height) > 60
+		});
+		console.log(elem) // tslint:disable-line
+		if (elem) {
+			this.setState({
+				headerStyle: elem.classList.contains('header-change-light') ? 'light' : 'dark'
+			})
+		}
+	}
+	public componentDidMount() {
+		window.addEventListener('scroll', this.onScroll)
+		this.onScroll();
 	}
 	public render() {
 		return (
