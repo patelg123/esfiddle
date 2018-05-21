@@ -38,13 +38,26 @@ export default class FiddleListing extends React.Component<IFiddleListingProps> 
 			</Link>
 		));
 
-		return (<div onWheel={this.onMouseWheel} className='fiddle-listing'>{fiddles}</div>)
+		return (
+			<div onWheel={this.onMouseWheel} className='fiddle-listing'>{fiddles}</div>
+		)
 	}
 
 	private onMouseWheel(e: any) {
 		const x: number = e.deltaX;
 		const y: number = e.deltaY;
-		if (Math.abs(x) > Math.abs(y)) { return; }
+		if (Math.abs(x) > Math.abs(y)) {
+			// Scrolling sideways, probably with a trackpad or fancy mouse. Allow default actions.
+			return;
+		}
+		if (this.node.scrollLeft === 0 && y < 0) {
+			// Trying to scroll up, allow it.
+			return;
+		}
+		if (this.node.scrollLeft + this.node.getBoundingClientRect().width === this.node.scrollWidth && y > 0) {
+			// End of carousel and still trying to scroll down. Allow it.
+			return
+		}
 		e.preventDefault();
 		e.stopPropagation();
 		this.node.scrollLeft += y;
