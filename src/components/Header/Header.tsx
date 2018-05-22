@@ -25,6 +25,7 @@ export default class Header extends React.Component<IHeaderProps> {
 					</NavLink>
 				</div>
 				<div className={'header__box header__navigation'}>
+					<NavLink activeClassName="active" to="/examples">Examples</NavLink>
 					<NavLink activeClassName="active" to="/editor">Editor</NavLink>
 					<NavLink activeClassName="active" to="/about">About</NavLink>
 					<NavLink activeClassName="active" to="/blog">Blog</NavLink>
