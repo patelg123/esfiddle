@@ -1,10 +1,13 @@
 import * as React from 'react';
 
 import {
-	BrowserRouter as Router,
 	Route,
+	Router,
 	Switch
 } from 'react-router-dom';
+
+import createHistory from "history/createBrowserHistory";
+const history = createHistory();
 
 import Editor from './components/Editor/Editor';
 import Footer from './components/Footer/Footer';
@@ -32,21 +35,25 @@ class App extends React.Component<{}, IAppState> {
 			const bounding = e.getBoundingClientRect();
 			return (bounding.top + bounding.height) > 60
 		});
-		console.log(elem) // tslint:disable-line
 		if (elem) {
-			this.setState({
-				headerStyle: elem.classList.contains('header-change-light') ? 'light' : 'dark'
-			})
+			const headerStyle = elem.classList.contains('header-change-light') ? 'light' : 'dark'
+			if (this.state.headerStyle !== headerStyle) {
+				this.setState({ headerStyle })
+			}
 		}
 	}
 	public componentDidMount() {
 		window.addEventListener('scroll', this.onScroll)
 		this.onScroll();
+		history.listen((location, action) => {
+			console.log('Change!') // tslint:disable-line
+			// requestAnimationFrame(() => this.onScroll());
+		})
 	}
 	public render() {
 		return (
 			<div>
-				<Router>
+				<Router history={history}>
 					<div>
 						<Header theme={this.state.headerStyle}/>
 						<Switch>
