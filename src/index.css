@@ -15,7 +15,7 @@ body {
   /*overflow-x: hidden;*/
 }
 * {
-	outline-color: var(--light);
+	outline-color: var(--medium-1);
 }
 .spacer {
 	flex: 1 1 auto;
